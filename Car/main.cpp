@@ -1,4 +1,4 @@
-#include<Windows.h>
+п»ї#include<Windows.h>
 #include<iostream>
 #include<conio.h>
 #include<thread>
@@ -71,7 +71,7 @@ public:
 
 class Engine
 {
-	const double CONSUMPTION;	//расход на 100 км.
+	const double CONSUMPTION;	//СЂР°СЃС…РѕРґ РЅР° 100 РєРј.
 	const double DEFAULT_CONSUMPTION_PER_SECOND;
 	double consumption_per_second;
 	bool is_started;
@@ -125,7 +125,7 @@ class Car
 	Engine engine;
 	Tank tank;
 	int speed;
-	int acceleration;	//ускорение
+	int acceleration;	//СѓСЃРєРѕСЂРµРЅРёРµ
 	const int MAX_SPEED;
 	bool driver_inside;
 	struct
@@ -133,7 +133,7 @@ class Car
 		std::thread panel_thread;
 		std::thread engine_idle_thread;
 		std::thread free_wheeling_thread;
-	}threads_container;	//Эта структура не имеет имени, и реализует только один экземпляр.
+	}threads_container;	//Р­С‚Р° СЃС‚СЂСѓРєС‚СѓСЂР° РЅРµ РёРјРµРµС‚ РёРјРµРЅРё, Рё СЂРµР°Р»РёР·СѓРµС‚ С‚РѕР»СЊРєРѕ РѕРґРёРЅ СЌРєР·РµРјРїР»СЏСЂ.
 public:
 	Car(double consumption, int capacity, int max_speed = 250, int acceleration = 10) :
 		MAX_SPEED
@@ -215,7 +215,7 @@ public:
 				break;
 			case'F':case'f':
 				double fuel;
-				cout << "Введите объем топлива: "; cin >> fuel;
+				cout << "Р’РІРµРґРёС‚Рµ РѕР±СЉРµРј С‚РѕРїР»РёРІР°: "; cin >> fuel;
 				tank.fill(fuel);
 				break;
 			case 'I':case'i':	//Ignition
@@ -235,7 +235,7 @@ public:
 			if (speed <= 0 && threads_container.free_wheeling_thread.joinable())
 				threads_container.free_wheeling_thread.join();
 		} while (key != Escape);
-		//Concurent execution (одновременное выполнение).
+		//Concurent execution (РѕРґРЅРѕРІСЂРµРјРµРЅРЅРѕРµ РІС‹РїРѕР»РЅРµРЅРёРµ).
 	}
 	void free_wheeling()
 	{
@@ -292,7 +292,7 @@ void main()
 	double fuel;
 	do
 	{
-		cout << "На сколько заправляемся? "; cin >> fuel;
+		cout << "РќР° СЃРєРѕР»СЊРєРѕ Р·Р°РїСЂР°РІР»СЏРµРјСЃСЏ? "; cin >> fuel;
 		tank.fill(fuel);
 		tank.info();
 	} while (true);
