@@ -281,7 +281,7 @@ public:
 };
 
 //#define TANK_CHECK
-//#define ENGINE_CHECK
+#define ENGINE_CHECK
 
 void main()
 {
@@ -304,6 +304,6 @@ void main()
 #endif // ENGINE_CHECK
 
 	Car bmw(10, 80, 270);
-	//bmw.info();
-	bmw.control();
+	bmw.info();
+	//bmw.control();
 }
